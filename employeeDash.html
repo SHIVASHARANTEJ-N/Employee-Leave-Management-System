@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSE Tech Group - Employee Leave Management System</title>
+    <link rel="stylesheet" href="employeedash.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo-section">
+                <div class="logo"><i class="fas fa-file-alt"></i></div>
+                <h1>CSE Tech Group</h1>
+            </div>
+            <nav class="nav">
+                <button class="nav-btn active" data-tab="dashboard"><i class="fas fa-home"></i><span>Employee Dashboard</span></button>
+                <button class="nav-btn" data-tab="apply"><i class="fa-solid fa-person-walking-arrow-right"></i><span>Apply Leave</span></button>
+                <button class="nav-btn" data-tab="history"><i class="fas fa-history"></i><span>Leave History</span></button>
+                <button class="nav-btn" data-tab="profile"><i class="fas fa-user-circle"></i><span>Profile</span></button>
+            </nav>
+            <div class="header-actions">
+                <button class="icon-btn"><i class="fas fa-bell"></i><span class="notification-badge"></span></button>
+                <button class="icon-btn"><i class="fas fa-cog"></i></button>
+                <div class="user-profile">
+                    <div class="user-avatar"><i class="fas fa-user"></i></div>
+                    <div class="user-info">
+                        <p class="user-name">CSE_B GROUP 9</p>
+                        <p class="user-role">Software Engineer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div id="dashboard" class="tab-content active">
+    <div class="container">
+        <div class="page-header"><h2>Dashboard</h2><p>Welcome back! Here's your leave overview.</p></div>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon blue"><i class="fas fa-calendar-check"></i></div>
+                <div class="stat-content"><h3>Total Leaves</h3><p class="stat-number">25</p><span class="stat-label">Days Available</span></div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon green"><i class="fas fa-check-circle"></i></div>
+                <div class="stat-content"><h3>Used Leaves</h3><p class="stat-number">12</p><span class="stat-label">Days Taken</span></div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon orange"><i class="fas fa-clock"></i></div>
+                <div class="stat-content"><h3>Pending</h3><p class="stat-number">2</p><span class="stat-label">Requests</span></div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon purple"><i class="fas fa-calendar-alt"></i></div>
+                <div class="stat-content"><h3>Remaining</h3><p class="stat-number">13</p><span class="stat-label">Days Left</span></div>
+            </div>
+        </div>
+        <div class="dashboard-grid">
+            <div class="card">
+                <div class="card-header"><h3>Recent Leave Requests</h3></div>
+                <div class="card-content">
+                    <div class="leave-request">
+                        <div class="request-info"><h4>Annual Leave</h4><p>Dec 20 - Dec 25, 2024</p></div>
+                        <span class="status approved">Approved</span>
+                    </div>
+                    <div class="leave-request">
+                        <div class="request-info"><h4>Sick Leave</h4><p>Nov 15 - Nov 16, 2024</p></div>
+                        <span class="status pending">Pending</span>
+                    </div>
+                    <div class="leave-request">
+                        <div class="request-info"><h4>Personal Leave</h4><p>Oct 10, 2024</p></div>
+                        <span class="status approved">Approved</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header"><h3>Leave Balance</h3></div>
+                <div class="card-content">
+                    <div class="balance-item">
+                        <span class="balance-type">Annual Leave</span>
+                        <div class="balance-bar"><div class="balance-fill" style="width: 60%"></div></div>
+                        <span class="balance-text">15/25 days</span>
+                    </div>
+                    <div class="balance-item">
+                        <span class="balance-type">Sick Leave</span>
+                        <div class="balance-bar"><div class="balance-fill" style="width: 30%"></div></div>
+                        <span class="balance-text">3/10 days</span>
+                    </div>
+                    <div class="balance-item">
+                        <span class="balance-type">Personal Leave</span>
+                        <div class="balance-bar"><div class="balance-fill" style="width: 40%"></div></div>
+                        <span class="balance-text">2/5 days</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <div id="apply" class="tab-content">
+    <div class="container">
+        <div class="page-header"><h2>Apply for Leave</h2><p>Submit your leave application for approval.</p></div>
+        <div class="form-layout">
+            <div class="form-main">
+                <div class="card">
+                    <div class="card-header"><h3><i class="fas fa-file-alt"></i> Leave Application Form</h3></div>
+                    <div class="card-content">
+                        <form id="leaveForm" class="leave-form">
+                            <div class="form-group">
+                                <label for="leaveType">Leave Type *</label>
+                                <select id="leaveType" required>
+                                    <option value="">Select leave type</option>
+                                    <option value="annual">Annual Leave - Vacation time</option>
+                                    <option value="sick">Sick Leave - Medical leave</option>
+                                    <option value="personal">Personal Leave - Personal matters</option>
+                                    <option value="maternity">Maternity Leave - Maternity/Paternity leave</option>
+                                    <option value="emergency">Emergency Leave - Unforeseen circumstances</option>
+                                </select>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group"><label for="startDate">Start Date *</label><input type="date" id="startDate" required></div>
+                                <div class="form-group"><label for="endDate">End Date *</label><input type="date" id="endDate" required></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="reason">Reason for Leave *</label>
+                                <textarea id="reason" placeholder="Please provide a brief reason for your leave..." required></textarea>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group"><label for="emergencyContact">Emergency Contact</label><input type="text" id="emergencyContact" placeholder="Contact person name"></div>
+                                <div class="form-group"><label for="contactNumber">Contact Number</label><input type="tel" id="contactNumber" placeholder="Emergency contact number"></div>
+                            </div>
+                            <button type="submit" class="submit-btn"><i class="fas fa-paper-plane" onclick="msg()"></i> Submit Leave Application</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="form-sidebar">
+                <div class="card">
+                    <div class="card-header"><h3>Leave Summary</h3></div>
+                    <div class="card-content">
+                        <div class="summary-item"><span>Working Days:</span><span id="workingDays">0 days</span></div>
+                        <div class="summary-item"><span>Leave Type:</span><span id="selectedLeaveType">-</span></div>
+                        <div class="summary-item"><span>Duration:</span><span id="leaveDuration">-</span></div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header"><h3><i class="fas fa-exclamation-triangle"></i> Guidelines</h3></div>
+                    <div class="card-content">
+                        <ul class="guidelines">
+                            <li>Submit applications at least 2 weeks in advance</li>
+                            <li>Annual leave requires manager approval</li>
+                            <li>Emergency leave can be submitted retroactively</li>
+                            <li>Medical certificates required for sick leave > 3 days</li>
+                            <li>Maximum consecutive leave: 30 days</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <div id="history" class="tab-content">
+            <div class="container">
+                <div class="page-header">
+                    <h2>Leave History</h2>
+                    <p>Track and manage your leave requests.</p>
+                </div>
+                <div class="history-controls">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchInput" placeholder="Search leave requests...">
+                    </div>
+                    <select id="statusFilter">
+                        <option value="all">All Status</option>
+                        <option value="approved">Approved</option>
+                        <option value="pending">Pending</option>
+                        <option value="rejected">Rejected</option>
+                    </select>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <table class="history-table">
+                            <thead>
+                                <tr>
+                                    <th>Leave Type</th><th>Start Date</th><th>End Date</th><th>Days</th><th>Status</th><th>Applied On</th><th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="historyTableBody">
+                                <tr>
+                                    <td>Annual Leave</td><td>Dec 20, 2024</td><td>Dec 25, 2024</td><td>4</td><td><span class="status approved">Approved</span></td><td>Dec 01, 2024</td>
+                                    <td><button class="action-btn view"><i class="fas fa-eye"></i></button></td>
+                                </tr>
+                                <tr>
+                                    <td>Sick Leave</td><td>Nov 15, 2024</td><td>Nov 16, 2024</td><td>2</td><td><span class="status pending">Pending</span></td><td>Nov 14, 2024</td>
+                                    <td><button class="action-btn edit"><i class="fas fa-edit"></i></button><button class="action-btn cancel"><i class="fas fa-times"></i></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="profile" class="tab-content">
+            <div class="container">
+                <div class="page-header">
+                    <h2>Employee Profile</h2>
+                    <p>Manage your personal information and leave settings.</p>
+                </div>
+                <div class="profile-layout">
+                    <div class="card">
+                        <div class="card-header"><h3>Personal Information</h3></div>
+                        <div class="card-content">
+                            <div class="profile-avatar">
+                                <div class="avatar-circle"><i class="fas fa-user"></i></div>
+                                <button class="change-photo-btn">Change Photo</button>
+                            </div>
+                            <form class="profile-form">
+                                <div class="form-row">
+                                    <div class="form-group"><label for="firstName">First Name</label><input type="text" id="firstName" value="John"></div>
+                                    <div class="form-group"><label for="lastName">Last Name</label><input type="text" id="lastName" value="Doe"></div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group"><label for="email">Email</label><input type="email" id="email" value="john.doe@company.com"></div>
+                                    <div class="form-group"><label for="phone">Phone</label><input type="tel" id="phone" value="+1 (555) 123-4567"></div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group"><label for="department">Department</label><input type="text" id="department" value="Engineering"></div>
+                                    <div class="form-group"><label for="position">Position</label><input type="text" id="position" value="Software Engineer"></div>
+                                </div>
+                                <button type="submit" class="save-btn"><i class="fas fa-save"></i> Save Changes</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header"><h3>Leave Entitlements</h3></div>
+                        <div class="card-content">
+                            <div class="entitlement-item">
+                                <div class="entitlement-info"><h4>Annual Leave</h4><p>Calendar year allocation</p></div>
+                                <div class="entitlement-progress">
+                                    <div class="progress-bar"><div class="progress-fill" style="width: 60%"></div></div>
+                                    <span>15/25 days used</span>
+                                </div>
+                            </div>
+                            <div class="entitlement-item">
+                                <div class="entitlement-info"><h4>Sick Leave</h4><p>Medical leave allocation</p></div>
+                                <div class="entitlement-progress">
+                                    <div class="progress-bar"><div class="progress-fill" style="width: 30%"></div></div>
+                                    <span>3/10 days used</span>
+                                </div>
+                            </div>
+                            <div class="entitlement-item">
+                                <div class="entitlement-info"><h4>Personal Leave</h4><p>Personal matters allocation</p></div>
+                                <div class="entitlement-progress">
+                                    <div class="progress-bar"><div class="progress-fill" style="width: 40%"></div></div>
+                                    <span>2/5 days used</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="employee.js"></script>
+</body>
+</html>

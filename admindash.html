@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h1>CSE Tech Group</h1>
+                </div>
+                
+                <nav class="nav">
+                    <button class="nav-btn active" data-tab="dashboard">
+                        <i class="fas fa-home"></i>
+                        <span>Admin Dashboard</span>
+                    </button>
+                    <button class="nav-btn" data-tab="apply">
+                        <i class="fa-solid fa-clipboard-user"></i>
+                        <span>Attdence</span>
+                    </button>
+                    <button class="nav-btn" data-tab="history">
+                        <i class="fas fa-history"></i>
+                        <span>Leave</span>
+                    </button>
+                    <button class="nav-btn" data-tab="profile">
+                        <i class="fas fa-user-circle"></i>
+                        <span>Profile</span>
+                    </button>
+                </nav>
+
+                <div class="header-actions">
+                    <button class="icon-btn">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge"></span>
+                    </button>
+                    <button class="icon-btn">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                    <div class="user-profile">
+                        <div class="user-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="user-info">
+                            <p class="user-name">CSE_B GROUP 9</p>
+                            <p class="user-role">Software Engineer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+<!-- Main Content -->
+     <!-- Main Content -->
+    <main class="main">
+        <!-- Dashboard Tab -->
+        <div id="dashboard" class="tab-content active">
+            <div class="container">
+                <div class="page-header">
+                    <h2>Admin Dashboard</h2>
+                    <p>Welcome back! Here's your Employees Data overview.</p>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon blue">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Total Employees</h3>
+                            <p class="stat-number">150</p>
+                            <span class="stat-label">No.of Employess</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon green">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Presentes</h3>
+                            <p class="stat-number">120</p>
+                            <span class="stat-label">No.of Employees Present</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon orange">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Leave Pending</h3>
+                            <p class="stat-number">10</p>
+                            <span class="stat-label">Requests Pending</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon purple">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Absent</h3>
+                            <p class="stat-number">30</p>
+                            <span class="stat-label">No.of Employees Absent</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Recent Leave Requests BY Employees</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="leave-request">
+                                <div class="request-info">
+                                    <h4>Sonu</h4>
+                                    <p>mar 20 - mar 25, 2025</p>
+                                </div>
+                                <span class="status approved">Approved</span>
+                            </div>
+                            <div class="leave-request">
+                                <div class="request-info">
+                                    <h4>Gopi</h4>
+                                    <p>june 15 - june 16, 2025</p>
+                                </div>
+                                <span class="status pending">Pending</span>
+                            </div>
+                            <div class="leave-request">
+                                <div class="request-info">
+                                    <h4>Balaji</h4>
+                                    <p>may 10, 2025</p>
+                                </div>
+                                <span class="status approved">Approved</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Employees Details</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="balance-item">
+                                <span class="balance-type">Todays Attendence Of Employees</span>
+                                <div class="balance-bar">
+                                    <div class="balance-fill" style="width: 60%"></div>
+                                </div>
+                                <span class="balance-text">150/200</span>
+                            </div>
+                            <div class="balance-item">
+                                <span class="balance-type">Todays Absent Of Employees</span>
+                                <div class="balance-bar">
+                                    <div class="balance-fill" style="width: 30%"></div>
+                                </div>
+                                <span class="balance-text">50/200</span>
+                            </div>
+                            <div class="balance-item">
+                                <span class="balance-type">Todays Birthday Of Employees</span>
+                                <div class="balance-bar">
+                                    <div class="balance-fill" style="width: 40%"></div>
+                                </div>
+                                <span class="balance-text">2/200 </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Details of the Employees -->
+        <div id="apply" class="tab-content">
+            <div class="container">
+                <div class="page-header">
+                    <h2>Details of the Employees</h2>
+                    <p>Employees Information Is Given Below</p>
+                </div>
+
+                <div class="form-layout">
+                    <div class="form-main">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3><i class="fa-solid fa-clipboard-user"></i> Attendence of Employees Today</h3>
+                            </div>
+                            <div class="card-content">
+                               <table>
+                                <tr>
+                                <th>S.no</th>
+                                <th>Name Of The Employee</th>
+                                <th>Attendence</th>
+                                <th>Salary</th>
+                                <th>Role</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>L.manoj</td>
+                                    <td>85.3%</td>
+                                    <td>35,000/-</td>
+                                    <td>Employee</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>N.shiva Sharan Tej</td>
+                                    <td>85.3%</td>
+                                    <td>35,000/-</td>
+                                    <td>Leader</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>P.mahesh</td>
+                                    <td>85.3%</td>
+                                    <td>35,000/-</td>
+                                    <td>Main</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>P.Bahrat</td>
+                                    <td>85.3%</td>
+                                    <td>35,000/-</td>
+                                    <td>Sub Coordinate</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>P.balaji</td>
+                                    <td>85.3%</td>
+                                    <td>35,000/-</td>
+                                    <td>Sub Coordinate</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>p.Guru Vardhan</td>
+                                    <td>85.3%</td>
+                                    <td>35,000/-</td>
+                                    <td>Sub Coordinate</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>U.Gopi Chand</td>
+                                    <td>85.3%</td>
+                                    <td>35,000/-</td>
+                                    <td>Sub Coordinate</td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>T.sohith</td>
+                                    <td>85.3%</td>
+                                    <td>35,000/-</td>
+                                    <td>Sub Coordinate</td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td>SK.thoheer</td>
+                                    <td>85.3%</td>
+                                    <td>35,000/-</td>
+                                    <td>Sub Coordinate</td>
+                                </tr>
+                                <tr>
+                                    <td>10</td>
+                                    <td>Sk.basha</td>
+                                    <td>85.3%</td>
+                                    <td>35,000/-</td>
+                                    <td>Sub Coordinate</td>
+                                </tr>
+                               </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Leave Permission Tab -->
+        <div id="history" class="tab-content">
+            <div class="container">
+                <div class="page-header">
+                    <h2>Leave History</h2>
+                    <p>Track and manage your leave requests.</p>
+                </div>
+
+                <div class="history-controls">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchInput" placeholder="Search leave requests...">
+                    </div>
+                    <select id="statusFilter">
+                        <option value="all">All Status</option>
+                        <option value="approved">Approved</option>
+                        <option value="pending">Pending</option>
+                        <option value="rejected">Rejected</option>
+                    </select>
+                </div>
+
+                <div class="card">
+                    <div class="card-content">
+                        <table class="history-table">
+                            <thead>
+                                <tr>
+                                    <th>Leave Type</th>
+                                    <th>Start Date</th>
+                                    <th>End Date</th>
+                                    <th>Days</th>
+                                    <th>Status</th>
+                                    <th>Applied On</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="historyTableBody">
+                                <tr>
+                                    <td>Annual Leave</td>
+                                    <td>Dec 20, 2024</td>
+                                    <td>Dec 25, 2024</td>
+                                    <td>4</td>
+                                    <td><span class="status approved">Approved</span></td>
+                                    <td>Dec 01, 2024</td>
+                                    <td>
+                                        <button class="action-btn view">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Sick Leave</td>
+                                    <td>Nov 15, 2024</td>
+                                    <td>Nov 16, 2024</td>
+                                    <td>2</td>
+                                    <td><span class="status pending">Pending</span></td>
+                                    <td>Nov 14, 2024</td>
+                                    <td>
+                                        <button class="action-btn edit">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="action-btn cancel">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile Tab -->
+        <div id="profile" class="tab-content">
+            <div class="container">
+                <div class="page-header">
+                    <h2>Admin Profile</h2>
+                    <p>Manage your personal information and leave settings.</p>
+                </div>
+
+                <div class="profile-layout">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Personal Information</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="profile-avatar">
+                                <div class="avatar-circle">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <button class="change-photo-btn">Change Photo</button>
+                            </div>
+
+                            <form class="profile-form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="firstName">First Name</label>
+                                        <input type="text" id="firstName" value="Shiva">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="lastName">Last Name</label>
+                                        <input type="text" id="lastName" value="Sharan Tej">
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="email" id="email" value="Shiva.cse@company.com">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="phone">Phone</label>
+                                        <input type="tel" id="phone" value="+91 8006547898">
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="department">Department</label>
+                                        <input type="text" id="department" value="Engineering">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="position">Position</label>
+                                        <input type="text" id="position" value="Software Engineer">
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="save-btn">
+                                    <i class="fas fa-save"></i>
+                                    Save Changes
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="admin.js"></script>
+
+</body>
+</html>

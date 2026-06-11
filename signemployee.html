@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 100vh;
+            display: grid;
+            place-items: center;
+            align-items: center;
+            box-sizing: border-box;
+        }
+        .kk{
+            display: flex;
+            flex-direction: column;
+            width: 400px;
+            line-height: 10px;
+            background: rgba(255, 255, 255, 0.1);  /* Semi-transparent background */
+            backdrop-filter: blur(10px);     
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+        input{
+            width: 95%;
+            height: 25px;
+            border: none;
+            margin-top: 1px;
+            border-radius: 10px;
+            background: none;
+            border: 1px white solid;
+        }
+        .a {
+            margin-right: 50%;
+        }
+        #q{
+            background: none;
+            border: none;
+            width: 15px;
+        }
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            border-color: rgba(255, 255, 255, 0.7); 
+            background: rgba(255, 255, 255, 0.2); 
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); 
+        }
+        button {
+            text-align: center;
+            background-color: chartreuse;
+            border: none;
+            height: 35px;
+            border-radius: 10px;
+            width: 95%;
+            margin-top: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: rgb(13, 167, 214);
+            color: black;
+        }
+        h2{
+            font-size: 2.2em; 
+            margin-bottom: 5px; 
+            font-weight: 700; 
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        a {
+            color: #b3e0ff; 
+            text-decoration: none; 
+            font-weight: 600; 
+            transition: color 0.3s ease; 
+        }
+
+        a:hover {
+            color: #ffffff; 
+            text-decoration: underline; 
+        }
+    </style>
+</head>
+<body>
+    <div class="kk">
+    <h2>Employee Registration</h2>
+    <p>Join the CSETech Group Team</p>
+    <p>Enter Your Name</p>
+    <input type="text" placeholder=" Full Name">
+    <p>Enter your Email ID</p>
+    <input type="text" placeholder=" Email ID">
+    <p>Enter your Employee ID</p>
+    <input type="text" placeholder=" Employee ID">
+    <p>Enter Your Password</p>
+    <input type="password" placeholder=" Select a Strong Password">
+    <p>Enter Your Password Again</p>
+    <input type="password" placeholder=" Retype Your Password">
+    <input type="checkbox" id="q" style="margin-right: 85%;"><p style="margin-top: -5%;">Accept The terms and Services of our Company</p>
+    <button>Create Account</button>
+    <p>Already have an account? <a href="employeelogin.html">Sign in here</a></p>
+    </div>
+
+    <script>
+    const email = document.querySelectorAll('input[type="text"]')[1]; 
+    email.addEventListener('input', function () {
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email.value)) {
+            email.style.borderColor = 'red';
+        } else {
+            email.style.borderColor = 'green';
+        }
+    });
+
+    document.querySelector('button').addEventListener('click', function (event) {
+        const name = document.querySelectorAll('input[type="text"]')[0].value.trim();
+        const emailVal = document.querySelectorAll('input[type="text"]')[1].value.trim();
+        const empID = document.querySelectorAll('input[type="text"]')[2].value.trim();
+        const password1 = document.querySelectorAll('input[type="password"]')[0].value;
+        const password2 = document.querySelectorAll('input[type="password"]')[1].value;
+        const termsAccepted = document.getElementById("q").checked;
+
+        if (!name || !emailVal || !empID || !password1 || !password2) {
+            alert("Please fill all fields.");
+            return;
+        }
+
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(emailVal)) {
+            alert("Enter a valid email address.");
+            return;
+        }
+
+        if (password1 !== password2) {
+            alert("Passwords do not match!");
+            return;
+        }
+
+        if (!termsAccepted) {
+            alert("Please accept the terms and conditions.");
+            return;
+        }
+
+        alert("Account Created Successfully!");
+        window.location.href = "employeelogin.html";
+    });
+</script>
+</body>
+</html>

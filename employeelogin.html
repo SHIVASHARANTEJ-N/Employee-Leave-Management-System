@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 100vh;
+            display: grid;
+            place-items: center;
+            line-height: 30px;
+        }
+        .emp{
+            display: flex;
+            flex-direction: column;
+            width: 400px;
+            background: rgba(255, 255, 255, 0.1);  /* Semi-transparent background */
+            backdrop-filter: blur(10px);     
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            justify-content: center;
+            align-items: center;
+            color: white;
+            align-items: flex;
+        }
+        input{
+            width: 95%;
+            height: 25px;
+            border: none;
+            margin-top: 10px;
+            border-radius: 20px;
+        }
+        a{
+            color: black;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: end;
+            text-decoration: none;
+        }
+        button{
+            text-align: center;
+            background-color: chartreuse;
+            border: none;
+            height: 35px;
+            border-radius: 20px;
+            width: 95%;
+        }
+        input[type=checkbox]{
+            width: 30px;
+            height: 10px;
+        }
+        a {
+            color: #b3e0ff; 
+            text-decoration: none; 
+            font-weight: 600; 
+            transition: color 0.3s ease; 
+        }
+
+        a:hover {
+            color: #ffffff; 
+            text-decoration: underline; 
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="emp">
+        <a href="main.html">Back To Home</a>
+    <h2>Employee Login</h2>
+    <p>Access your Employee account</p>
+         <form>
+            <input type="email"  placeholder=" Enter your email id">
+            <input type="password" placeholder=" Enter your password">
+            <input type="checkbox" name="" id="">Remainder me  
+            <a href="" style="margin-top: -7%;">Forgot Password?</a>
+            <button onclick="location.href='employeeDash.html'">Sign In</button>
+            <p>Don't have an account? <a href="signemployee.html" style="margin-top: -7%;">Create an account</a></p>
+         </form>
+    </div>
+</body>
+</html>

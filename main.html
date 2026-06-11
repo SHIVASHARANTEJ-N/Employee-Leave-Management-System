@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSE TECH GROUP Login Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            background: linear-gradient(95deg, #667eea 0%, #764ba2 100%); 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+        h1{
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+            text-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+            font-size: 2.8em;
+            animation: slideInTop 5s ease-out;
+        }
+        @keyframes slideInTop {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .both{
+            color: rgb(244, 241, 241);
+            background-color: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            background-attachment: fixed;
+            width: 450px;
+            height: 350px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+        }
+        #b1 {
+            background: #4776E6;  
+            background: -webkit-linear-gradient(to right, #8E54E9, #4776E6);  
+            background: linear-gradient(to right, #8E54E9, #4776E6); 
+            border: none;
+            width: 75%;
+            height: 60px;
+            border-radius: 20px;
+        }
+        #b2 {
+            background-color: greenyellow;
+            border: none;
+            width: 75%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 60px;
+            border-radius: 20px;
+            margin-top: 10px;
+        }
+        h3 {
+            font-size: 1.8em; 
+            margin-bottom: 10px;
+            font-weight: 600; 
+            color: white;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+        .both p {
+            font-size: 1em;
+            margin-bottom: 30px; 
+            font-weight: 300; 
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        button {
+            width: 80%; 
+            padding: 18px 25px; 
+            border: none;
+            border-radius: 12px; 
+            color: white;
+            font-size: 1.2em; 
+            font-weight: 600; 
+            cursor: pointer;
+            transition: all 0.3s ease; 
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25); 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            gap: 10px; 
+            text-decoration: none; 
+        }
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome To CSE Tech Group</h1>
+    <div class="both">
+        <h3>Authentication Portal</h3>
+        <p>Choose Your access level to Continue</p>
+        <button id="b1" onclick="location.href='adminlogin.html'"><img src="award.png">Administrator Access</button>
+        <button id="b2" onclick="location.href='employeelogin.html'"><img src="multiple-users-silhouette.png">Employee Access</button>
+    </div>
+</body>
+</html>

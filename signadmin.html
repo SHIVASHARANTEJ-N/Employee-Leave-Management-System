@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 100vh;
+            display: grid;
+            place-items: center;
+            font-family: 'Inter', sans-serif;
+        }
+        .admin{
+            display: flex;
+            flex-direction: column;
+            width: 400px;
+            line-height: 10px;
+            background: rgba(255, 255, 255, 0.1);  /* Semi-transparent background */
+            backdrop-filter: blur(10px);     
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+        input{
+            width: 95%;
+            height: 25px;
+            border: none;
+            margin-top: 1px;
+            border-radius: 20px;
+            background: none;
+            border: 1px solid white;
+            font-size: 1em;
+            color: aliceblue;
+        }
+        .a {
+            margin-right: 50%;
+        }
+        #q{
+            background: none;
+            border: none;
+        }
+        a {
+            color: #b3e0ff; 
+            text-decoration: none; 
+            font-weight: 600; 
+            transition: color 0.3s ease; 
+        }
+
+        a:hover {
+            color: #ffffff; 
+            text-decoration: underline; 
+        }
+        .checkbox-container span {
+            margin: 0; 
+            font-size: 0.9em;
+            text-align: left; 
+        }
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px; 
+            margin-right: 10px; 
+            accent-color: #667eea; 
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        #w {
+            width: calc(100% - 30px); 
+            padding: 15px 20px;
+            border: none;
+            border-radius: 10px; 
+            background: linear-gradient(90deg, #a276b2 0%, #667eea 100%); 
+            color: white;
+            font-size: 1.1em; 
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2); 
+            margin-top: 10px;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 95%;
+            height: 35px;
+            border: none;
+            margin-top: 10px;
+            border-radius: 10px;
+            background: none;
+            border: 1px solid white;
+            padding: 0 15px;
+            font-size: 1em;
+            color: aliceblue;
+        }
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        button:hover {
+            
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); 
+            transform: translateY(-2px); 
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="admin">
+    <button id="q" onclick="location.href='main.html'"><img src="arrow.png" alt="">Back Home Page</button>
+    <h2><img src="administration.png" alt="" style="height: 50px;">Administrator Registration</h2>
+    <p>Create your admin account</p>
+    <p>Join the CSETech Group Team</p>
+    <p class="a">Enter Your Full Name</p>
+    <input type="text" placeholder="Enter your full name">
+    <p class="a">Enter Your Email ID</p>
+    <input type="text" placeholder="Enter your Email id">
+    <p class="a">Enter Your Employee ID</p>
+    <input type="text" placeholder="Enter Your Employee Id">
+    <p class="a">Enter Your Password</p>
+    <input type="password" placeholder="Enter your password">
+    <p class="a">Enter Your Password Again</p>
+    <input type="password" placeholder="Enter your again password to confirm">
+    <div class="checkbox-container">
+        <input type="checkbox">
+            <span>Accept The terms and Services of our Company</span>
+    </div>
+    <button id="w">Create Account</button>
+    <p>Already have an account? <a href="adminlogin.html">Sign in here</a></p>
+    </div>
+
+    <script>
+    const email = document.querySelectorAll('input[type="text"]')[1]; 
+    email.addEventListener('input', function () {
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email.value)) {
+            email.style.borderColor = 'red';
+        } else {
+            email.style.borderColor = 'green';
+        }
+    });
+
+    document.querySelector('button').addEventListener('click', function (event) {
+        const name = document.querySelectorAll('input[type="text"]')[0].value.trim();
+        const emailVal = document.querySelectorAll('input[type="text"]')[1].value.trim();
+        const empID = document.querySelectorAll('input[type="text"]')[2].value.trim();
+        const password1 = document.querySelectorAll('input[type="password"]')[0].value;
+        const password2 = document.querySelectorAll('input[type="password"]')[1].value;
+        const termsAccepted = document.getElementById("q").checked;
+
+        if (!name || !emailVal || !empID || !password1 || !password2) {
+            alert("Please fill all fields.");
+            return;
+        }
+
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(emailVal)) {
+            alert("Enter a valid email address.");
+            return;
+        }
+
+        if (password1 !== password2) {
+            alert("Passwords do not match!");
+            return;
+        }
+
+        if (!termsAccepted) {
+            alert("Please accept the terms and conditions.");
+            return;
+        }
+
+        alert("Account Created Successfully!");
+        window.location.href = "adminlogin.html";
+    });
+</script>
+</body>
+</html>
