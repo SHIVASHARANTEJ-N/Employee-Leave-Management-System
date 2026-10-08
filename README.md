@@ -174,8 +174,8 @@ Through this project, I gained hands-on experience in:
 Computer Science Engineering Student  
 Passionate about AI, Machine Learning, Data Science, and Full-Stack Development.
 
-GitHub: Add your GitHub profile link  
-LinkedIn: Add your LinkedIn profile link
+GitHub: https://github.com/SHIVASHARANTEJ-N
+LinkedIn: https://www.linkedin.com/in/shiva-sharan-tej-nallamalli/
 
 ---
 
